@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Instagram-like Page</title>
+  <style>
+  body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      /* background-image: url('3.jpg'); */
+      background-color: #333;
+      background-size:cover;
+      height: 100vh;
+      overflow: hidden;
+    }
+    ::-webkit-scrollbar{
+      width: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #000000; 
+    }
+    ::-webkit-scrollbar-thumb {
+    background: #1e655f; 
+}
+    
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(255, 255, 255, 0.5);
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 2;
+      transition: all 0.3s ease;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+    
+    .navbar.transparent {
+      background-color: rgba(255, 255, 255, 0);
+    }
+    
+    .navbar-logo {
+      font-weight: bold;
+      font-size: 20px;
+      text-align: center;
+      color: #333;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      flex: 1;
+      transition: all 0.3s ease;
+      border-radius: 100%;
+    }
+    
+    .navbar-dropdown {
+      position: relative;
+      display: inline-block;
+      margin-right: 20px;
+      border-radius: 100%;
+    }
+    
+    .navbar-dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      min-width: 50px;
+      background-color: #038fe7;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      z-index: 3;
+      
+    }
+    
+    .navbar-dropdown:hover .navbar-dropdown-content {
+      display: block;
+    }
+    
+    .navbar-dropdown-item {
+      width: 10px;
+      padding: 10px;
+      cursor: pointer;
+    }
+    
+    .container {
+      max-width: 600px;
+      margin: 100px auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 4px;
+      text-align: center;
+    }
+    
+    .post {
+    width: 100%;
+    max-width: 500px; 
+    margin: 0 auto 20px; 
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .post {
+      max-width: 100%; 
+      margin: 0 auto 10px; 
+      padding: 5px; 
+    }
+  }
+
+    
+    .post-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .post-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    
+    .post-username {
+      font-weight: bold;
+    }
+    
+    .post-image {
+      max-width: 100%;
+      margin-bottom: 10px;
+    }
+    
+    .post-likes {
+      font-weight: bold;
+    }
+    
+    .post-description {
+      margin-bottom: 10px;
+    }
+    .container2 {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 4px;
+      text-align: center;
+    }
+    
+
+    .imagee
+    {
+        width: 50px;
+        height:50px;
+        border-radius: 100%;
+    }
+
+    /* Footer */
+    .footer {
+      position:relative;
+      bottom: 0;
+      left: 0;
+      width: 90;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      display: block;
+    }
+
+    /* Media Query for smaller screens */
+    @media screen and (max-width: 768px) {
+      .footer {
+        padding: 10px;
+      }
+    }
+
+    
+    @media screen and (max-width: 768px) {
+      .navbar{
+        position: fixed;
+        width: 100%;
+        height: 100vh;     
+       
+      }
+
+      .container {
+        padding: 10px;
+      }
+      
+      .post {
+        padding: 5px;
+      }
+      
+      .post-avatar {
+        width: 30px;
+        height: 30px;
+        margin-right: 5px;
+      }
+      
+      .post-username {
+        font-size: 14px;
+      }
+      
+      .post-description {
+        font-size: 14px;
+      }
+    }
+
+  </style>
+</head>
+<body onload="splash()">
+  <div class="navbar">
+    <div class="navbar-logo">UrSpace</div>
+    <div class="navbar-dropdown">
+      <img class="imagee" src="1.jpg" alt="Profile Icon">
+      <div class="navbar-dropdown-content">
+        <div class="navbar-dropdown-item">I</div>
+        <div class="navbar-dropdown-item">!</div>
+        <div class="navbar-dropdown-item">$</div>
+      </div>
+    </div>
+  </div>
+  <!-- posts -->
+    <div class="container">
+        <div class="post">
+        <div class="post-header">
+            <img class="post-avatar" src="1.jpg" alt="User Avatar">
+            <span class="post-username">John Doe</span>
+            </div>
+            <img class="post-image" src="2.jpg" alt="Post Image">
+            <div class="post-likes">Likes: 100</div>
+            <div class="post-description">This is the caption for the post.</div>
+            </div>
+    <div class="post">
+        <div class="post-header">
+          <img class="post-avatar" src="3.jpg" alt="User Avatar">
+          <span class="post-username">John Doe</span>
+          </div>
+          <img class="post-image" src="4.jpg" alt="Post Image">
+          <div class="post-likes">Likes: 100</div>
+          <div class="post-description">This is the caption for the post.</div>
+      </div>
+
+
+
+      <div class="post">
+        <div class="post-header">
+          <img class="post-avatar" src="5.jpg" alt="User Avatar">
+          <span class="post-username">John Doe</span>
+          </div>
+          <img class="post-image" src="6.jpg" alt="Post Image">
+          <div class="post-likes">Likes: 100</div>
+          <div class="post-description">This is the caption for the post.</div>
+      </div>
+
+      <div class="footer" id="footer">
+        <p>&copy; 2023 Your Website. All rights reserved.</p>
+        <p>About Us | Contact Us | Phone: 123-456-7890</p>
+      </div>
+
+
+    <!-- Add more posts here -->
+    
+  </div>
+
+  <script>
+      var navbar = document.querySelector('.navbar');
+      var navtext = document.querySelector('.navbar-logo');
+      
+
+    // window.onscroll = function() { scrollFunction() };
+    
+    // function scrollFunction() {
+    //   var navbar = document.getElementById("navbar");
+    //   var navbarLogo = document.getElementById("navbar-logo");
+      
+    //   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    //     navbar.classList.remove("navbar");
+        
+    //     navbar.classList.add("navbar-shrink");
+    //     navbarLogo.style.fontSize = "18px";
+    //   } else {
+    //     navbar.classList.remove("navbar-shrink");
+    //     navbarLogo.style.fontSize = "20px";
+        
+    //   }
+    // }
+
+    //footer
+    // function isPageScrolledToEnd() {
+    //   var windowHeight = window.innerHeight;
+    //   var documentHeight = document.documentElement.scrollHeight;
+    //   var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+    //   return (documentHeight - windowHeight - scrollTop) <= 0;
+    // }
+
+    // window.addEventListener('scroll', function() {
+    //   var footer = document.getElementById('footer');
+    //   if (window.innerHeight == (window.scrollXOffset+window.innerHeight)) {
+    //     footer.style.display = 'block';
+    //   } else {
+    //     footer.style.display = 'none';
+    //   }
+    // });
+
+// when you log in
+    function splash() {
+    setTimeout(function(){
+      navbar.style.height="40px";
+      navbar.style.width="100%";
+      document.body.style.overflow="scroll";
+    },2000);  
+    };
+
+
+
+
+// Footer funtion
+    window.addEventListener('scroll', function() {
+  if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
+    footer.style.display = 'block';
+  }else{
+    footer.style.display = 'none';
+    }
+  });
+  
+//navbar
+    window.addEventListener('scroll', function() {
+
+      if (window.pageYOffset > 0) {
+        navbar.style.width="10%";
+        navtext.style.display="none";
+        navbar.style.transitionDuration="1s";
+        navbar.style.postion="absolute";
+        navbar.style.left="85%";
+        //FOR MOBILE
+        // navbar.style.top="90%";
+
+      } else {
+        navbar.style.transitionDuration="0s";
+        navtext.style.display="inline";
+        navbar.style.left="0%";
+        navtext.style.display="inline";
+        navbar.style.width="100%";
+        //FOR MOBILE
+        // navbar.style.top="0%";
+      }
+    });
+
+  </script>
+</body>
+</html>
