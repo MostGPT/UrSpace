@@ -13,13 +13,13 @@
       
     }
     ::-webkit-scrollbar{
-      width: 5px;
+      width: 2px;
     }
     ::-webkit-scrollbar-track {
       background: #000000; 
     }
     ::-webkit-scrollbar-thumb {
-      background: #1e655f; 
+      background: #1F4E5F; 
 }
     
     .navbar {
@@ -92,7 +92,6 @@
       border-radius: 4px;
       padding: 5px;
       text-align: center;
-      /* background-color: white; */
     }
     
     .post {
@@ -126,6 +125,7 @@
       height: 40px;
       border-radius: 50%;
       margin-right: 10px;
+      border: 3px solid gray;
     }
     
     .post-username {
@@ -154,11 +154,11 @@
     }
     
 
-    .imagee
-    {
+    .imagee{
         width: 50px;
         height:50px;
         border-radius: 100%;
+        border: 3px solid gray;
     }
 
     /* Footer */
@@ -214,32 +214,59 @@
     }
     /* ------------------------------------------------------left side------------------------------------------------------------------ */
 
-    /* .navbar-dropdown-list {
+    
+    
+    .sto-image {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    
+    .sto-name {
+      size: 2px;
+      color: #1F4E5F;
+    }
+    
+    .sto-profile-list {
       position: fixed;
       top: 0;
       left: 0;
-      width: 4%;
-      height: 100vh;
-      background-color: white;
-      padding: 0px;
-      display: flex;
+      width: 7vw;
+      height: 100%;
+      background-color: rgb(255, 255, 255);
+      display: none;
       flex-direction: column;
       align-items: center;
+      text-align: center;
       z-index: 2;
-      transition: all 0.3s ease;
+      padding-top: 100px;
       border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
       border: 2px solid #1F4E5F;
+      overflow-y: scroll;
     }
-
-    .navbar-profile {
+    
+    .sto-profile {
       width: 50px;
       height: 50px;
       border-radius: 100%;
       margin-bottom: 10px;
-    } */
+      margin-top: 10px;
+      border: 3px solid gray;
+      
+    }
+
+
+
+/* idaft maken al likes and comments 
+  idafat 3 ni2at fo2 el post for settings and share or report
+  idafet add your storie above the stories
+  slode show for the posts    
+   */
 
   </style>
+
+
 </head>
 <body onload="splash()">
   <div class="navbar">
@@ -253,18 +280,65 @@
       </div>
     </div>
   </div>
-  <!-- stories -->
+  
+        <!-- stories -->          
+              <!-- <button class="button" onclick="toggleList()">Open List</button>
+                  <div class="list" id="profileList">
+                    <div class="profile">
+                      <img class="profile-image" src="profile1.jpg" alt="Profile 1">
+                      <span class="profile-name">User 1</span>
+                    </div>
+                    <div class="profile">
+                      <img class="profile-image" src="profile2.jpg" alt="Profile 2">
+                      <span class="profile-name">User 2</span>
+                    </div>
+                    <div class="profile">
+                      <img class="profile-image" src="profile3.jpg" alt="Profile 3">
+                      <span class="profile-name">User 3</span>
+                    </div>
 
-
-
-
-
-        <!-- Add more profile images here -->
-      </div>
+                  </div> -->
+  
+  <div class="sto-profile-list">
+    <div class="profile">
+      <img class="sto-profile" src="1.jpg" alt="Profile 1">
+      <div class="sto-name">farid</div>
+    </div>
+    <div class="profile">
+      <img class="sto-profile" src="2.jpg" alt="Profile 2">
+      <div class="sto-name">samir</div>
+    </div>
+    <div class="profile">
+      <img class="sto-profile" src="3.jpg" alt="Profile 3">
+      <div class="sto-name">abbas</div>
+      <img class="sto-profile" src="1.jpg" alt="Profile 1">
+      <div class="sto-name">farid</div>
+    </div>
+    <div class="profile">
+      <img class="sto-profile" src="2.jpg" alt="Profile 2">
+      <div class="sto-name">samir</div>
+    </div>
+    <div class="profile">
+      <img class="sto-profile" src="3.jpg" alt="Profile 3">
+      <div class="sto-name">abbas</div>
+      <img class="sto-profile" src="1.jpg" alt="Profile 1">
+      <div class="sto-name">farid</div>
+    </div>
+    <div class="profile">
+      <img class="sto-profile" src="2.jpg" alt="Profile 2">
+      <div class="sto-name">samir</div>
+    </div>
+    <div class="profile">
+      <img class="sto-profile" src="3.jpg" alt="Profile 3">
+      <div class="sto-name">abbas</div>
     </div>
     <!-- Add more profile images here -->
   </div>
-  <!-- posts -->
+
+
+
+  
+ <!-- posts -->
     <div class="container">
         <div class="post">
         <div class="post-header">
@@ -284,9 +358,6 @@
           <div class="post-likes">Likes: 100</div>
           <div class="post-description">This is the caption for the post.</div>
       </div>
-
-
-
       <div class="post">
         <div class="post-header">
           <img class="post-avatar" src="5.jpg" alt="User Avatar">
@@ -296,9 +367,33 @@
           <div class="post-likes">Likes: 100</div>
           <div class="post-description">This is the caption for the post.</div>
       </div>
-
-
-
+      <div class="post">
+        <div class="post-header">
+          <img class="post-avatar" src="1.jpg" alt="User Avatar">
+          <span class="post-username">John Doe</span>
+          </div>
+          <img class="post-image" src="6.jpg" alt="Post Image">
+          <div class="post-likes">Likes: 100</div>
+          <div class="post-description">This is the caption for the post.</div>
+      </div>
+      <div class="post">
+        <div class="post-header">
+          <img class="post-avatar" src="2.jpg" alt="User Avatar">
+          <span class="post-username">John Doe</span>
+          </div>
+          <img class="post-image" src="4.jpg" alt="Post Image">
+          <div class="post-likes">Likes: 100</div>
+          <div class="post-description">This is the caption for the post.</div>
+      </div>
+      <div class="post">
+        <div class="post-header">
+          <img class="post-avatar" src="3.jpg" alt="User Avatar">
+          <span class="post-username">John Doe</span>
+          </div>
+          <img class="post-image" src="1.jpg" alt="Post Image">
+          <div class="post-likes">Likes: 100</div>
+          <div class="post-description">This is the caption for the post.</div>
+      </div>
     <!-- Add more posts here -->
     
   </div>
@@ -311,9 +406,8 @@
   <script>
       var navbar = document.querySelector('.navbar');
       var navtext = document.querySelector('.navbar-logo');
-      var stories = document.querySelector('.navbar-dropdown-list ');
-      
-
+      var stories = document.querySelector(' .sto-profile-list');
+     
     // window.onscroll = function() { scrollFunction() };
     
     // function scrollFunction() {
@@ -355,12 +449,15 @@
       navbar.style.height="60px";
       navbar.style.width="100%";
       document.body.style.overflow="scroll";
-      stories.stories.display="flex";
+      stories.style.display="flex";
+
     },2000);  
     };
 
-
-
+    function toggleList() {
+      var list = document.getElementById("profileList");
+      list.style.display = (list.style.display === "none") ? "block" : "none";
+    }
 
 // Footer funtion
     window.addEventListener('scroll', function() {
