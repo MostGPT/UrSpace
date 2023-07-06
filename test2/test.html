@@ -16,10 +16,10 @@
       width: 2px;
     }
     ::-webkit-scrollbar-track {
-      background: #000000; 
+      background: #00000000; 
     }
     ::-webkit-scrollbar-thumb {
-      background: #1F4E5F; 
+      background: #ffffffc8; 
 }
     
     .navbar {
@@ -28,17 +28,17 @@
       left: 0;
       width: 100%;
       height: 100vh;
-      background-color: white;
-      padding: 4px;
+      background-color: rgba(255, 255, 255, 0.993);
+      padding: 5px;
+      z-index: 1;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 2;
-      transition: all 0.3s ease;
       border-bottom-left-radius: 10px;
       border-bottom-right-radius: 10px;
       border:2px solid #1F4E5F;
       color: #1F4E5F;
+      justify-content: center;
     }
     
     .navbar.transparent {
@@ -47,48 +47,62 @@
     
     .navbar-logo {
       font-weight: bold;
-      font-size: 20px;
+      font-size: 40px;
       text-align: center;
       margin:5px;
       color: #1F4E5F;
       text-shadow: 2px 2px 4px rgb(80, 150, 235);
       flex: 1;
-      transition: all 0.3s ease;
-      border-radius: 100%;
     }
     
-    .navbar-dropdown {
-      position: relative;
-      display: inline-block;
-      margin-right: 50px;
-      border-radius: 100%;
-    }
     
-    .navbar-dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      min-width: 50px;
-      background-color: white;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-      z-index: 3;
-      
-    }
-    
-    .navbar-dropdown:hover .navbar-dropdown-content {
-      display: block;
-    }
-    
-    .navbar-dropdown-item {
-      width: 10px;
-      padding: 10px;
-      cursor: pointer;
-    }
-    
+      .imagee{
+        width: 40px;
+        height:40px;
+
+        }
+      .dropbtn {
+        background-color: #ffffff;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        width: 30px;
+        height:30px;
+        margin-right: 50px;
+
+      }
+
+      .dropdown {
+        position: relative;
+        display: none;  
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 50px;
+
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content a:hover {background-color: #ffffff;}
+
+      .dropdown:hover .dropdown-content {display: block;}
+
+
+
+    /*container---------------------------------------------------------------------------------------------  */
     .container {
       max-width: 550px;
-      margin: 100px auto;
+      margin: 70px auto;
       border-radius: 4px;
       padding: 5px;
       text-align: center;
@@ -97,7 +111,7 @@
     .post {
     width: 100%;
     max-width: 500px;    
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0);
     border: 2px solid #1F4E5F;
     border-radius: 4px;
     padding: 5px; 
@@ -144,30 +158,15 @@
     .post-description {
       margin-bottom: 10px;
     }
-    .container2 {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: rgba(255, 255, 255, 0.8);
-      border-radius: 4px;
-      text-align: center;
-    }
-    
 
-    .imagee{
-        width: 50px;
-        height:50px;
-        border-radius: 100%;
-        border: 3px solid gray;
-    }
-
+  
     /* Footer */
     .footer {
       position:relative;
       bottom: 0;
       left: 0;
       width: 90;
-      background-color: rgba(0, 0, 0, 0.8);
+      background-color: rgb(0, 0, 0);
       color: #fff;
       padding: 20px;
       text-align: center;
@@ -213,14 +212,13 @@
       }
     }
     /* ------------------------------------------------------left side------------------------------------------------------------------ */
-
-    
-    
     .sto-image {
       width: 50px;
       height: 50px;
       border-radius: 50%;
       margin-right: 10px;
+      float: inline-start;
+      margin: 0 100px;
     }
     
     .sto-name {
@@ -229,34 +227,55 @@
     }
     
     .sto-profile-list {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 7vw;
-      height: 100%;
-      background-color: rgb(255, 255, 255);
+      width: 55vw; 
       display: none;
-      flex-direction: column;
-      align-items: center;
+      position: absolute;
+      background-color: white;
+      border:2px solid #1F4E5F;
       text-align: center;
-      z-index: 2;
-      padding-top: 100px;
-      border-bottom-left-radius: 10px;
-      border: 2px solid #1F4E5F;
-      overflow-y: scroll;
+      z-index: 1;
+      border-radius: 10px;
+      margin: auto;
+     
+      top: 75px;
+      overflow: scroll;
     }
     
     .sto-profile {
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
+      padding: 1px;
       border-radius: 100%;
-      margin-bottom: 10px;
-      margin-top: 10px;
-      border: 3px solid gray;
+      margin: 10px;
+      border: 3px solid rgb(0, 0, 0);
+
       
     }
+    .stobutton {
+      display: inline-block;
+      text-decoration: none;
+      padding: 0px;
+      z-index: 1;
+      border-radius: 30px;
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+    }
+    @media screen and (max-width: 768px) {
+      .sto-profile {
+        width: 40px;
+        height: 40px;
+      }
 
-
+      .stobutton {
+        padding: 20px;
+        margin-left: -15px;
+      }
+    }
+    .logo{
+      width: 60px;
+      height: 60px;
+    }
 
 /* idaft maken al likes and comments 
   idafat 3 ni2at fo2 el post for settings and share or report
@@ -269,83 +288,104 @@
 
 </head>
 <body onload="splash()">
+
+
   <div class="navbar">
-    <div class="navbar-logo">UrSpace</div>
-    <div class="navbar-dropdown">
-      <img class="imagee" src="1.jpg" alt="Profile Icon">
-      <div class="navbar-dropdown-content">
-        <div class="navbar-dropdown-item">I</div>
-        <div class="navbar-dropdown-item">!</div>
-        <div class="navbar-dropdown-item">$</div>
+    <div class="navbar-logo"> <img class="logo" src="mani.png">URSPACE</div>
+    <button class="stobutton" onclick="myFunction()"><img class="sto-profile" src="1.jpg" alt="Profile 1">  </button>
+    <div class="dropdown">
+      <button class="dropbtn"><img class="imagee" src="settings.png" alt="Profile Icon"></button>        
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
       </div>
     </div>
+    <div class="sto-profile-list">
+      <div class="profile">
+        <img class="sto-profile" src="1.jpg" alt="Profile 1">
+        <div class="sto-name">farid</div>
+      </div>
+      <div class="profile">
+        <img class="sto-profile" src="2.jpg" alt="Profile 2">
+        <div class="sto-name">samir</div>
+      </div>
+      <div class="profile">
+        <img class="sto-profile" src="3.jpg" alt="Profile 3">
+        <div class="sto-name">abbas</div>
+      </div>
+      <div class="profile">
+        <img class="sto-profile" src="2.jpg" alt="Profile 2">
+        <div class="sto-name">samir</div>
+      </div>
+      <div class="profile">
+        <img class="sto-profile" src="3.jpg" alt="Profile 3">
+        <div class="sto-name">abbas</div>        
+      </div>
+      <div class="profile">
+        <img class="sto-profile" src="2.jpg" alt="Profile 2">
+        <div class="sto-name">samir</div>
+      </div>
+      <div class="profile">
+        <img class="sto-profile" src="3.jpg" alt="Profile 3">
+        <div class="sto-name">abbas</div>
+      </div>
+      <div class="profile">
+        <img class="sto-profile" src="3.jpg" alt="Profile 3">
+        <div class="sto-name">abbas</div>
+      </div>
+      <div class="profile">
+        <img class="sto-profile" src="2.jpg" alt="Profile 2">
+        <div class="sto-name">samir</div>
+      </div>
+      <div class="profile">
+        <img class="sto-profile" src="3.jpg" alt="Profile 3">
+        <div class="sto-name">abbas</div>
+      </div>
+      <div class="profile">
+        <img class="sto-profile" src="2.jpg" alt="Profile 2">
+        <div class="sto-name">samir</div>
+      </div>
+      <div class="profile">
+        <img class="sto-profile" src="3.jpg" alt="Profile 3">
+        <div class="sto-name">abbas</div>
+      </div>
+      <div class="profile">
+        <img class="sto-profile" src="3.jpg" alt="Profile 3">
+        <div class="sto-name">abbas</div>
+      </div>
+      <div class="profile">
+        <img class="sto-profile" src="2.jpg" alt="Profile 2">
+        <div class="sto-name">samir</div>
+      </div>
+      <div class="profile">
+        <img class="sto-profile" src="3.jpg" alt="Profile 3">
+        <div class="sto-name">abbas</div>
+      </div>
+      <div class="profile">
+        <img class="sto-profile" src="2.jpg" alt="Profile 2">
+        <div class="sto-name">samir</div>
+      </div>
+      <div class="profile">
+        <img class="sto-profile" src="3.jpg" alt="Profile 3">
+        <div class="sto-name">abbas</div>
+      </div>
+      <!-- Add more profile images here -->
   </div>
-  
-        <!-- stories -->          
-              <!-- <button class="button" onclick="toggleList()">Open List</button>
-                  <div class="list" id="profileList">
-                    <div class="profile">
-                      <img class="profile-image" src="profile1.jpg" alt="Profile 1">
-                      <span class="profile-name">User 1</span>
-                    </div>
-                    <div class="profile">
-                      <img class="profile-image" src="profile2.jpg" alt="Profile 2">
-                      <span class="profile-name">User 2</span>
-                    </div>
-                    <div class="profile">
-                      <img class="profile-image" src="profile3.jpg" alt="Profile 3">
-                      <span class="profile-name">User 3</span>
-                    </div>
-
-                  </div> -->
-  
-  <div class="sto-profile-list">
-    <div class="profile">
-      <img class="sto-profile" src="1.jpg" alt="Profile 1">
-      <div class="sto-name">farid</div>
-    </div>
-    <div class="profile">
-      <img class="sto-profile" src="2.jpg" alt="Profile 2">
-      <div class="sto-name">samir</div>
-    </div>
-    <div class="profile">
-      <img class="sto-profile" src="3.jpg" alt="Profile 3">
-      <div class="sto-name">abbas</div>
-      <img class="sto-profile" src="1.jpg" alt="Profile 1">
-      <div class="sto-name">farid</div>
-    </div>
-    <div class="profile">
-      <img class="sto-profile" src="2.jpg" alt="Profile 2">
-      <div class="sto-name">samir</div>
-    </div>
-    <div class="profile">
-      <img class="sto-profile" src="3.jpg" alt="Profile 3">
-      <div class="sto-name">abbas</div>
-      <img class="sto-profile" src="1.jpg" alt="Profile 1">
-      <div class="sto-name">farid</div>
-    </div>
-    <div class="profile">
-      <img class="sto-profile" src="2.jpg" alt="Profile 2">
-      <div class="sto-name">samir</div>
-    </div>
-    <div class="profile">
-      <img class="sto-profile" src="3.jpg" alt="Profile 3">
-      <div class="sto-name">abbas</div>
-    </div>
-    <!-- Add more profile images here -->
   </div>
 
 
+  </div>
 
-  
  <!-- posts -->
     <div class="container">
+ 
         <div class="post">
         <div class="post-header">
             <img class="post-avatar" src="1.jpg" alt="User Avatar">
             <span class="post-username">John Doe</span>
             </div>
-            <img class="post-image" src="2.jpg" alt="Post Image">
+            <img class="post-image" src="1.jpg" alt="Post Image">
             <div class="post-likes">Likes: 100</div>
             <div class="post-description">This is the caption for the post.</div>
             </div>
@@ -395,6 +435,7 @@
           <div class="post-description">This is the caption for the post.</div>
       </div>
     <!-- Add more posts here -->
+
     
   </div>
   
@@ -407,41 +448,9 @@
       var navbar = document.querySelector('.navbar');
       var navtext = document.querySelector('.navbar-logo');
       var stories = document.querySelector(' .sto-profile-list');
-     
-    // window.onscroll = function() { scrollFunction() };
-    
-    // function scrollFunction() {
-    //   var navbar = document.getElementById("navbar");
-    //   var navbarLogo = document.getElementById("navbar-logo");
-      
-    //   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    //     navbar.classList.remove("navbar");
-        
-    //     navbar.classList.add("navbar-shrink");
-    //     navbarLogo.style.fontSize = "18px";
-    //   } else {
-    //     navbar.classList.remove("navbar-shrink");
-    //     navbarLogo.style.fontSize = "20px";
-        
-    //   }
-    // }
-
-    //footer
-    // function isPageScrolledToEnd() {
-    //   var windowHeight = window.innerHeight;
-    //   var documentHeight = document.documentElement.scrollHeight;
-    //   var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-    //   return (documentHeight - windowHeight - scrollTop) <= 0;
-    // }
-
-    // window.addEventListener('scroll', function() {
-    //   var footer = document.getElementById('footer');
-    //   if (window.innerHeight == (window.scrollXOffset+window.innerHeight)) {
-    //     footer.style.display = 'block';
-    //   } else {
-    //     footer.style.display = 'none';
-    //   }
-    // });
+      var sett = document.querySelector(' .dropdown');
+      var visibile = 0;
+      // var propro = document.querySelector(' .navbar-logo');
 
 // when you log in
     function splash() {
@@ -449,15 +458,26 @@
       navbar.style.height="60px";
       navbar.style.width="100%";
       document.body.style.overflow="scroll";
-      stories.style.display="flex";
-
-    },2000);  
+      sett.style.display="inline-block";
+    },300);  
     };
 
-    function toggleList() {
-      var list = document.getElementById("profileList");
-      list.style.display = (list.style.display === "none") ? "block" : "none";
+    function myFunction() {
+
+        if(visibile == 0){         
+          stories.style.display= "flex"
+          visibile=1;;
+          }
+          else{
+              visibile= 0;
+              stories.style.display="none";
+              }
     }
+
+    // function toggleList() {
+    //   var list = document.getElementById("profileList");
+    //   list.style.display = (list.style.display === "none") ? "block" : "none";
+    // }
 
 // Footer funtion
     window.addEventListener('scroll', function() {
@@ -467,38 +487,10 @@
     footer.style.display = 'none';
     }
   });
-  
-//navbar
-    window.addEventListener('scroll', function() {
 
-      if (window.pageYOffset > 0) {
-        navbar.style.width="20%";
-        navtext.style.display="none";
-        navbar.style.transitionDuration="1s";
-        navbar.style.postion="absolute";
-        navbar.style.left="85%";
-        navbar.style.opacity="60%";
-        //FOR MOBILE
-        // navbar.style.top="90%";
-
-      } else {
-        navbar.style.transitionDuration="0s";
-        navtext.style.display="inline";
-        navbar.style.left="0%";
-        navbar.style.width="100%";
-        navbar.style.opacity="100%";
-        
-        //FOR MOBILE
-        // navbar.style.top="0%";
-      }
-     });
-    // window.addEventListener('DOMContentLoaded', function() {
-    // window.scrollTo(0, 0);
-    // });
     function scrollToTop() {
             window.scrollTo(0, 0);
           }
-
           window.addEventListener('beforeunload', scrollToTop);
 
   </script>
